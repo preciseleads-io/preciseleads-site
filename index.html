@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PreciseLeads — 100 Verified Prospects + Cold Email Copy in 5 Days</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=DM+Mono:wght@400;500&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --white: #fafafa;
+      --grey-100: #f2f2f0;
+      --grey-300: #c8c8c4;
+      --grey-500: #737370;
+      --grey-700: #3a3a38;
+      --accent: #1a6b3a;
+      --accent-light: #e8f5ee;
+      --accent-bright: #22c55e;
+      --danger: #dc2626;
+      --font-main: 'Inter', system-ui, sans-serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-main);
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(250,250,250,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--grey-100);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: -0.02em;
+      color: var(--black);
+    }
+
+    .nav-logo span { color: var(--accent); }
+
+    .nav-cta {
+      background: var(--black);
+      color: var(--white);
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+
+    .nav-cta:hover { background: var(--accent); }
+
+    /* HERO */
+    .hero {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 96px 24px 80px;
+      text-align: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent-bright);
+    }
+
+    h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+      color: var(--black);
+      margin-bottom: 24px;
+    }
+
+    h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: clamp(16px, 2.5vw, 20px);
+      color: var(--grey-500);
+      max-width: 560px;
+      margin: 0 auto 40px;
+      line-height: 1.55;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .btn-primary {
+      background: var(--black);
+      color: var(--white);
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.15s, transform 0.1s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary:hover { background: var(--accent); transform: translateY(-1px); }
+
+    .btn-secondary {
+      color: var(--grey-700);
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    .hero-trust {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--grey-500);
+      letter-spacing: 0.02em;
+    }
+
+    .hero-trust strong { color: var(--black); }
+
+    /* PROOF TICKER */
+    .ticker-wrapper {
+      overflow: hidden;
+      background: var(--grey-100);
+      border-top: 1px solid #e5e5e3;
+      border-bottom: 1px solid #e5e5e3;
+      padding: 12px 0;
+    }
+
+    .ticker {
+      display: flex;
+      gap: 48px;
+      white-space: nowrap;
+      animation: ticker 20s linear infinite;
+    }
+
+    .ticker-item {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--grey-500);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ticker-item::before { content: '✓'; color: var(--accent-bright); }
+
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* PROBLEM SECTION */
+    .section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--grey-500);
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      color: var(--black);
+      margin-bottom: 20px;
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .problem-card {
+      background: #fff8f8;
+      border: 1px solid #fecaca;
+      border-radius: 10px;
+      padding: 24px;
+    }
+
+    .problem-card .icon { font-size: 20px; margin-bottom: 12px; }
+
+    .problem-card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--danger);
+    }
+
+    .problem-card p { font-size: 14px; color: var(--grey-700); line-height: 1.5; }
+
+    /* HOW IT WORKS */
+    .steps-wrapper {
+      background: var(--grey-100);
+      padding: 80px 0;
+    }
+
+    .steps-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1px;
+      background: var(--grey-300);
+      border: 1px solid var(--grey-300);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 40px;
+    }
+
+    .step {
+      background: var(--white);
+      padding: 28px 24px;
+    }
+
+    .step-num {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--accent);
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+
+    .step h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .step p { font-size: 13px; color: var(--grey-500); line-height: 1.5; }
+
+    /* DELIVERABLE */
+    .deliverable-box {
+      background: var(--black);
+      color: var(--white);
+      border-radius: 14px;
+      padding: 48px;
+      margin-top: 56px;
+    }
+
+    .deliverable-box h2 { color: var(--white); margin-bottom: 8px; }
+
+    .deliverable-box .sub { color: var(--grey-300); margin-bottom: 32px; font-size: 15px; }
+
+    .deliverable-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+    }
+
+    .deliverable-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: #d1d5db;
+      line-height: 1.5;
+    }
+
+    .deliverable-list li::before {
+      content: '→';
+      color: var(--accent-bright);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* PRICING */
+    .pricing-card {
+      border: 2px solid var(--black);
+      border-radius: 14px;
+      padding: 40px;
+      max-width: 480px;
+      margin: 40px auto 0;
+      position: relative;
+    }
+
+    .pricing-badge {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 16px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+
+    .price {
+      font-size: 52px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin: 16px 0 6px;
+    }
+
+    .price-note {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--grey-500);
+      margin-bottom: 24px;
+    }
+
+    .price-features {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+
+    .price-features li {
+      font-size: 14px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--grey-100);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .price-features li::before { content: '✓'; color: var(--accent-bright); font-weight: 700; }
+
+    .price-features li:last-child { border-bottom: none; }
+
+    .guarantee-box {
+      background: var(--accent-light);
+      border: 1px solid #bbf7d0;
+      border-radius: 8px;
+      padding: 16px;
+      font-size: 13px;
+      color: var(--accent);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .btn-full {
+      display: block;
+      width: 100%;
+      background: var(--black);
+      color: var(--white);
+      padding: 16px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+
+    .btn-full:hover { background: var(--accent); }
+
+    /* SAMPLE */
+    .sample-section {
+      background: var(--black);
+      color: var(--white);
+      padding: 80px 0;
+    }
+
+    .sample-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+      text-align: center;
+    }
+
+    .sample-inner h2 { color: var(--white); margin-bottom: 12px; }
+    .sample-inner p { color: var(--grey-300); margin-bottom: 32px; }
+
+    .sample-form {
+      display: flex;
+      max-width: 440px;
+      margin: 0 auto;
+      gap: 8px;
+    }
+
+    .sample-form input {
+      flex: 1;
+      padding: 13px 16px;
+      border-radius: 8px;
+      border: none;
+      background: #1c1c1c;
+      color: var(--white);
+      font-family: var(--font-main);
+      font-size: 14px;
+      outline: none;
+    }
+
+    .sample-form input::placeholder { color: var(--grey-500); }
+    .sample-form input:focus { background: #232323; }
+
+    .sample-form button {
+      background: var(--accent-bright);
+      color: var(--black);
+      border: none;
+      padding: 13px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      font-family: var(--font-main);
+      transition: opacity 0.15s;
+    }
+
+    .sample-form button:hover { opacity: 0.85; }
+
+    /* FAQ */
+    details {
+      border-bottom: 1px solid var(--grey-100);
+      padding: 20px 0;
+    }
+
+    summary {
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::after {
+      content: '+';
+      font-size: 20px;
+      color: var(--grey-500);
+      font-weight: 300;
+      transition: transform 0.2s;
+    }
+
+    details[open] summary::after { transform: rotate(45deg); }
+
+    details p {
+      font-size: 14px;
+      color: var(--grey-700);
+      margin-top: 12px;
+      line-height: 1.6;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--grey-100);
+      border-top: 1px solid #e5e5e3;
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    footer p {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--grey-500);
+    }
+
+    footer a { color: var(--grey-500); }
+
+    /* MODAL */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-overlay.active { display: flex; }
+
+    .modal {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 520px;
+      width: 100%;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px; right: 16px;
+      background: var(--grey-100);
+      border: none;
+      border-radius: 50%;
+      width: 32px; height: 32px;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal h2 { font-size: 22px; margin-bottom: 8px; letter-spacing: -0.02em; }
+    .modal p { font-size: 14px; color: var(--grey-500); margin-bottom: 24px; }
+
+    .form-group { margin-bottom: 16px; }
+
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--grey-500);
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid var(--grey-300);
+      border-radius: 8px;
+      font-family: var(--font-main);
+      font-size: 14px;
+      color: var(--black);
+      background: var(--white);
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--black); }
+
+    .form-group textarea { resize: vertical; min-height: 80px; }
+
+    .form-submit {
+      width: 100%;
+      background: var(--black);
+      color: var(--white);
+      border: none;
+      padding: 14px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: var(--font-main);
+      transition: background 0.15s;
+      margin-top: 8px;
+    }
+
+    .form-submit:hover { background: var(--accent); }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--grey-100);
+      margin: 60px 0;
+    }
+
+    @media (max-width: 600px) {
+      .deliverable-box { padding: 28px 20px; }
+      .pricing-card { padding: 28px 20px; }
+      .modal { padding: 28px 20px; }
+      .sample-form { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Precise<span>Leads</span></div>
+  <a href="#pricing" class="nav-cta">See pricing →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">For B2B marketing agencies</div>
+  <h1>100 verified prospects.<br>Ready-to-send email copy.<br><em>5 business days.</em></h1>
+  <p class="hero-sub">
+    Stop spending 4 hours a week building lists that don't convert.
+    We deliver a targeted, verified lead list + personalized cold email sequences — so you can focus on closing, not prospecting.
+  </p>
+  <div class="hero-cta-group">
+    <a href="#pricing" class="btn-primary">Get my list — $150 →</a>
+    <button class="btn-secondary" onclick="openSampleModal()">Request a free 10-lead sample</button>
+  </div>
+  <p class="hero-trust"><strong>Delivered in 5 days.</strong> Money-back guarantee if quality is poor. No lock-in.</p>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrapper">
+  <div class="ticker">
+    <span class="ticker-item">100 verified leads per project</span>
+    <span class="ticker-item">Personalized opening lines for every prospect</span>
+    <span class="ticker-item">3-email cold sequence included</span>
+    <span class="ticker-item">5-day delivery guarantee</span>
+    <span class="ticker-item">Google Sheet format, ready to import</span>
+    <span class="ticker-item">US-focused B2B prospecting</span>
+    <span class="ticker-item">100 verified leads per project</span>
+    <span class="ticker-item">Personalized opening lines for every prospect</span>
+    <span class="ticker-item">3-email cold sequence included</span>
+    <span class="ticker-item">5-day delivery guarantee</span>
+    <span class="ticker-item">Google Sheet format, ready to import</span>
+    <span class="ticker-item">US-focused B2B prospecting</span>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="section">
+  <p class="section-label">The problem</p>
+  <h2>Manual prospecting is killing your agency's growth time.</h2>
+  <div class="problem-grid">
+    <div class="problem-card">
+      <div class="icon">⏱</div>
+      <h3>5+ hours per week</h3>
+      <p>The average agency owner spends 5 hours per week building prospect lists manually — time that should go toward client work or closing deals.</p>
+    </div>
+    <div class="problem-card">
+      <div class="icon">💸</div>
+      <h3>Bloated tool costs</h3>
+      <p>ZoomInfo, Seamless.ai, and similar tools cost $400–1,200/month and still deliver stale data with zero personalization.</p>
+    </div>
+    <div class="problem-card">
+      <div class="icon">📉</div>
+      <h3">Sub-1% reply rates</h3>
+      <p>Generic outreach with no personalization gets ignored. Most cold emails go straight to trash because they read like templates.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<div class="steps-wrapper">
+  <div class="steps-inner">
+    <p class="section-label">How it works</p>
+    <h2>Four steps from brief to inbox-ready list.</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <p class="step-num">STEP 01</p>
+        <h3>Tell me your ICP</h3>
+        <p>Fill in a quick Google Form about your ideal client — industry, size, title, location, budget.</p>
+      </div>
+      <div class="step">
+        <p class="step-num">STEP 02</p>
+        <h3>We build your list</h3>
+        <p>100 verified, manually-reviewed prospects matched to your exact ICP. Emails confirmed deliverable.</p>
+      </div>
+      <div class="step">
+        <p class="step-num">STEP 03</p>
+        <h3>We write the copy</h3>
+        <p>Every prospect gets a personalized opening line + a full 3-email sequence tailored to your offer.</p>
+      </div>
+      <div class="step">
+        <p class="step-num">STEP 04</p>
+        <h3>You receive delivery</h3>
+        <p>Google Sheet + Loom walkthrough, delivered in 5 business days. Import and start sending.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DELIVERABLE -->
+<section class="section">
+  <div class="deliverable-box">
+    <p class="section-label" style="color: var(--grey-300);">What you receive</p>
+    <h2>Everything you need to start a cold outreach campaign — today.</h2>
+    <p class="sub">One Google Sheet. Everything in it.</p>
+    <ul class="deliverable-list">
+      <li>100 verified prospect records (name, title, company, email, LinkedIn URL)</li>
+      <li>Company size and revenue range for each prospect</li>
+      <li>Personalized opening line for every single prospect</li>
+      <li>Full 3-email cold outreach sequence for your offer</li>
+      <li>Sending schedule (day 1, day 4, day 8 timing)</li>
+      <li>Subject line variants (3 tested options)</li>
+      <li>Loom video walkthrough of the entire deliverable</li>
+      <li>Simple sending instructions doc (no tech required)</li>
+    </ul>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pricing">
+  <p class="section-label">Pricing</p>
+  <h2>One project. One price. Zero surprise fees.</h2>
+  <div class="pricing-card">
+    <div class="pricing-badge">Intro price — limited spots</div>
+    <p style="font-size: 13px; color: var(--grey-500); margin-top: 16px;">One-time project</p>
+    <div class="price">$150</div>
+    <p class="price-note">Price increases to $299 after first 5 clients</p>
+    <ul class="price-features">
+      <li>100 verified, ICP-matched prospects</li>
+      <li>Personalized opening line per prospect</li>
+      <li>3-email cold sequence for your offer</li>
+      <li>Delivered in 5 business days</li>
+      <li>Google Sheet format (import-ready)</li>
+      <li>Loom walkthrough video</li>
+    </ul>
+    <div class="guarantee-box">
+      🛡 <strong>Quality guarantee:</strong> If you're not satisfied with the lead quality, I'll rebuild the list free of charge. No questions asked.
+    </div>
+    <a href="YOUR_GUMROAD_LINK_HERE" class="btn-full" target="_blank">Get started — $150 →</a>
+    <p style="font-size: 12px; color: var(--grey-500); text-align: center; margin-top: 12px;">Payment via Gumroad · Secure checkout · Instant confirmation</p>
+  </div>
+</section>
+
+<hr class="divider" style="max-width: 900px; margin: 0 auto;" />
+
+<!-- FREE SAMPLE -->
+<div class="sample-section" id="sample">
+  <div class="sample-inner">
+    <p class="section-label" style="color: var(--grey-300);">Not sure yet?</p>
+    <h2>Get a free 10-lead sample first.</h2>
+    <p>Enter your email and I'll send you 10 verified, personalized sample leads for your niche — no payment, no obligation, no follow-up spam.</p>
+    <div class="sample-form">
+      <input type="email" placeholder="you@youragency.com" id="sampleEmail" />
+      <button onclick="submitSample()">Send me the sample</button>
+    </div>
+    <p id="sample-msg" style="font-size: 13px; color: var(--accent-bright); margin-top: 12px; display: none;">
+      ✓ Got it! I'll email you the sample within 24 hours.
+    </p>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="section">
+  <p class="section-label">FAQ</p>
+  <h2>Common questions.</h2>
+  <div style="margin-top: 32px;">
+    <details>
+      <summary>How do you find the leads?</summary>
+      <p>I use a combination of verified B2B data sources and manual LinkedIn research to find prospects that match your exact ICP. Every email is verified before delivery.</p>
+    </details>
+    <details>
+      <summary>Will these emails actually reach inboxes?</summary>
+      <p>Yes. Every email address is verified before delivery using email validation tools. We also include sending best-practices guidance so your deliverability stays high.</p>
+    </details>
+    <details>
+      <summary>What industries do you cover?</summary>
+      <p>Primarily US-based B2B: SaaS, professional services, e-commerce, marketing agencies, consultants, and staffing. If your niche is different, ask first and I'll tell you honestly if I can serve it well.</p>
+    </details>
+    <details>
+      <summary>How do I send the emails?</summary>
+      <p>I include a sending guide in every delivery. You can use Gmail, Outlook, or any free email tool. You don't need to buy any software.</p>
+    </details>
+    <details>
+      <summary>What if the list quality is poor?</summary>
+      <p>Simple: I rebuild it free. That's the guarantee. I'm only interested in repeat clients and referrals, so bad work isn't an option.</p>
+    </details>
+    <details>
+      <summary>Can I buy a monthly retainer?</summary>
+      <p>Yes — after your first project, I offer a monthly option (3 lists/month) at a reduced rate. Message me after delivery to discuss.</p>
+    </details>
+  </div>
+</section>
+
+<!-- MODAL: Free Sample -->
+<div class="modal-overlay" id="sampleModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeSampleModal()">×</button>
+    <h2>Get your free 10-lead sample</h2>
+    <p>Tell me who you're trying to reach and I'll build a sample list in 24 hours.</p>
+    <div class="form-group">
+      <label>Your email</label>
+      <input type="email" placeholder="you@youragency.com" id="modalEmail" />
+    </div>
+    <div class="form-group">
+      <label>Your agency's service</label>
+      <input type="text" placeholder="e.g. Facebook ads for eCommerce brands" id="modalService" />
+    </div>
+    <div class="form-group">
+      <label>Who do you want to reach?</label>
+      <input type="text" placeholder="e.g. eCommerce brand owners doing $1M–$10M" id="modalICP" />
+    </div>
+    <button class="form-submit" onclick="submitSampleModal()">Send me the free sample →</button>
+    <p id="modal-msg" style="font-size: 13px; color: var(--accent); margin-top: 12px; text-align:center; display:none;">
+      ✓ Got it! I'll email you within 24 hours.
+    </p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 PreciseLeads · Built for B2B agencies · <a href="mailto:YOUR_EMAIL_HERE">YOUR_EMAIL_HERE</a></p>
+</footer>
+
+<script>
+  function openSampleModal() {
+    document.getElementById('sampleModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeSampleModal() {
+    document.getElementById('sampleModal').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('sampleModal').addEventListener('click', function(e) {
+    if (e.target === this) closeSampleModal();
+  });
+
+  function submitSample() {
+    const email = document.getElementById('sampleEmail').value;
+    if (!email || !email.includes('@')) return;
+    document.getElementById('sample-msg').style.display = 'block';
+    // Replace this with a Google Apps Script webhook URL later
+    // fetch('YOUR_GOOGLE_APPS_SCRIPT_WEBHOOK', { method: 'POST', body: JSON.stringify({ email }) });
+  }
+
+  function submitSampleModal() {
+    const email = document.getElementById('modalEmail').value;
+    const service = document.getElementById('modalService').value;
+    const icp = document.getElementById('modalICP').value;
+    if (!email || !email.includes('@')) return;
+    document.getElementById('modal-msg').style.display = 'block';
+    // Replace with Google Apps Script webhook URL
+    // fetch('YOUR_GOOGLE_APPS_SCRIPT_WEBHOOK', { method: 'POST', body: JSON.stringify({ email, service, icp }) });
+  }
+</script>
+
+</body>
+</html>
